@@ -1,0 +1,19 @@
+{
+  "name": "shiki-git-diff",
+  "version": "0.0.1",
+  "description": "Display git patch in shiki with syntax highlighting of the original language.",
+  "keywords": ["shiki", "diff"],
+  "main": "index.ts",
+  "author": {
+    "name": "OverflowCat",
+    "url": "https://about.overflow.cat"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.4.1",
+  "dependencies": {
+    "shiki": ">=3.0.0 <4.0.0"
+  }
+}

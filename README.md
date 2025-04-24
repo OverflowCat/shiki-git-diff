@@ -9,11 +9,11 @@ pnpm add shiki-git-diff
 ## Configure
 
 ```js
-import shikiGitDiff from "shiki-git-diff";
+import { shikiGitDiff, shikiGitDiffOptions } from "shiki-git-diff";
     // ...
     transformers: [
         shikiGitDiff({
-            // default config
+            // default options
             classLineAdd: "add",
             classLineRemove: "remove",
             classActivePre: "diff",

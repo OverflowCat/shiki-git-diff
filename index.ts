@@ -1,13 +1,13 @@
 import { ShikiTransformer } from "shiki";
 
-type shikiGitDiffOptions = {
+export type shikiGitDiffOptions = {
     classLineAdd?: string;
     classLineRemove?: string;
     classActivePre?: string;
     condition?: (meta: string) => boolean;
 };
 
-function shikiGitDiff(
+export function shikiGitDiff(
     options: shikiGitDiffOptions = {}
 ): ShikiTransformer {
     const {

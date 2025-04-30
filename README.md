@@ -17,7 +17,7 @@ import { shikiGitDiff, shikiGitDiffOptions } from "shiki-git-diff";
             classLineAdd: "add",
             classLineRemove: "remove",
             classActivePre: "diff",
-            condition: (meta: string) => meta.endsWith("diff"),
+            condition: (meta: string) => meta?.endsWith("diff"),
         }),
     ],
     // ...

@@ -1,6 +1,6 @@
 {
   "name": "shiki-git-diff",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Display git patch in shiki with syntax highlighting of the original language.",
   "keywords": ["shiki", "diff"],
   "main": "index.ts",

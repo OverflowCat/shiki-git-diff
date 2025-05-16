@@ -17,7 +17,7 @@ import { shikiGitDiff, shikiGitDiffOptions } from "shiki-git-diff";
             classLineAdd: "add",
             classLineRemove: "remove",
             classActivePre: "diff",
-            condition: (meta: string) => meta?.endsWith("diff"),
+            condition = ctx => ctx.options?.meta?.["__raw"]?.endsWith(".diff"),
         }),
     ],
     // ...
@@ -26,12 +26,12 @@ import { shikiGitDiff, shikiGitDiffOptions } from "shiki-git-diff";
 ## Display
 
 ```less
-code>[data-line] {
-    &.diff.add {
-        background-color: rgba(67, 218, 64, 0.3);
-    }
-    &.diff.remove {
-        background-color: rgba(229, 38, 38, 0.3);
-    }
+code > [data-line] {
+  &.diff.add {
+    background-color: rgba(67, 218, 64, 0.3);
+  }
+  &.diff.remove {
+    background-color: rgba(229, 38, 38, 0.3);
+  }
 }
 ```

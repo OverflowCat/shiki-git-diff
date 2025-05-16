@@ -1,4 +1,4 @@
-import { ShikiTransformer } from "shiki";
+import { ShikiTransformer, ShikiTransformerContext } from "shiki";
 
 export type shikiGitDiffOptions = {
     classLineAdd?: string;
@@ -14,13 +14,13 @@ export function shikiGitDiff(
         classLineAdd = "add",
         classLineRemove = "remove",
         classActivePre = "diff",
-        condition = (meta: string) => meta?.endsWith("diff"),
+        condition = (ctx: ShikiTransformerContext) => ctx.options?.meta?.["__raw"]?.endsWith(".diff"),
     } = options;
     return {
         name: "shiki-git-diff",
         code: function (hast) {
             // @ts-expect-error
-            if (this.options.meta.__raw || !condition(this.options.meta.__raw)) return;
+            if (!condition(this)) return;
             for (const line of hast.children) {
                 if (line.type !== "element") {
                     continue;
